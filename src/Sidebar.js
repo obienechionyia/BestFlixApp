@@ -15,16 +15,13 @@ const Sidebar = () => {
       <div className="sidebar-container">
         <h1 className="sidebar-text">Your Movie List</h1>
         <div className="movie-list">
-          <ul>
-            {userList.map((movie) => {
-              const { name, original_title, id } = movie;
-              return (
-                <li key={id}>
-                  {name} || {original_title}
-                </li>
-              );
-            })}
-          </ul>
+          {userList.map((movie) => {
+            return (
+              <h3 id={movie} className="watch-later">
+                {movie}
+              </h3>
+            );
+          })}
         </div>
       </div>
     </aside>

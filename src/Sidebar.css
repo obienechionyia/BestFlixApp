@@ -11,8 +11,6 @@
   color: red;
   cursor: pointer;
   position: relative;
-  left: 20rem;
-  top: 48rem;
 }
 .close-btn:hover {
   color: rgb(153, 7, 7);
@@ -44,6 +42,18 @@
 
 .sidebar-text {
   color: white;
+  font-size: 2.5rem;
+}
+
+.watch-later {
+  color: white;
+  list-style-type: none;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.movie-list {
+  margin-top: 20px;
 }
 
 .show-sidebar {

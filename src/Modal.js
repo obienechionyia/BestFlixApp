@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaTimes } from "react-icons/fa";
 import "./Modal.css";
 import { useGlobalContext } from "./context";
@@ -11,7 +11,16 @@ const Modal = () => {
     );
   };
   const baseUrl = "https://image.tmdb.org/t/p/original";
-  const { isModalOpen, closeModal, currentSelection } = useGlobalContext();
+  const { isModalOpen, closeModal, currentSelection, setUserList, userList } =
+    useGlobalContext();
+  const addToList = () => {
+    setUserList([
+      ...userList,
+      currentSelection?.name || currentSelection.original_title,
+    ]);
+    console.log(userList);
+  };
+
   return (
     <div className={isModalOpen ? "modal-overlay show-modal" : "modal-overlay"}>
       <div className="modal-container">
@@ -36,6 +45,9 @@ const Modal = () => {
           }
         >
           Watch Trailer
+        </button>
+        <button className="trailer-btn" onClick={addToList}>
+          Watch Later
         </button>
       </div>
     </div>

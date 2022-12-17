@@ -9,9 +9,9 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
   const [movies, setMovies] = useState([]);
   const { openModal, currentSelection, setCurrentSelection } = useGlobalContext();
 
-  const handleClick = (movie) => {
-    setCurrentSelection(movie);
-    openModal();
+  const handleClick = async (movie) => {
+    await setCurrentSelection(movie);
+    await openModal();
   };
 
   useEffect(() => {

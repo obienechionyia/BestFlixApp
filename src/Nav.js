@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import './Nav.css';
 import Logo from './movie-logo.png';
 import Menu from "./menu-icon.jpg";
+import { useGlobalContext } from './context';
 
 function Nav() {
-
+    const { openSidebar, closeSidebar, isSidebarOpen } = useGlobalContext();
    const [show, setShow] = useState(false);
   
    useEffect(() => {
@@ -17,6 +18,7 @@ function Nav() {
        });
    }, []);
 
+
   return (
     <div className={show ? "nav-black" : "nav"}>
         <img
@@ -24,7 +26,7 @@ function Nav() {
             src={ Logo }
             alt="Movie App Logo"
         />
-        <img
+        <img onClick={isSidebarOpen ? closeSidebar : openSidebar}
             className="nav-menu"
             src={ Menu }
             alt="Menu Icon"

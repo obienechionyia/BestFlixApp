@@ -3,12 +3,14 @@ import requests from "./requests";
 import Banner from "./Banner";
 import Nav from "./Nav";
 import Modal from "./Modal";
+import Sidebar from "./Sidebar";
 
 function App() {
   return (
     <div className="app">
       <Nav />
       <Modal />
+      <Sidebar />
       <Banner />
       <Row title="Trending Now" fetchUrl={requests.fetchTrending} />
       <Row title="Action Movies" fetchUrl={requests.fetchActionMovies} />

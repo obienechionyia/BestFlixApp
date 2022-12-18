@@ -16,6 +16,37 @@
   color: rgb(153, 7, 7);
 }
 
+.delete-btn {
+  font-size: 1.2rem;
+  background: transparent;
+  border-color: transparent;
+  color: red;
+  cursor: pointer;
+  position: fixed;
+}
+
+.delete-btn:hover {
+  color: rgb(153, 7, 7);
+}
+
+.clear-btn {
+  margin-top: 20px;
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+  border: 2px solid;
+  border-radius: 5px;
+  height: 50%;
+  width: 50%;
+  font-size: large;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-transform: uppercase;
+}
+
+.clear-btn:hover {
+  background-color: rgb(29, 29, 29);
+}
+
 .sidebar {
   position: fixed;
   top: 0;

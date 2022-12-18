@@ -27,7 +27,7 @@ function Nav() {
             alt="Movie App Logo"
         />
         <img onClick={isSidebarOpen ? closeSidebar : openSidebar}
-            className="nav-menu"
+            className={isSidebarOpen ? "nav-menu nav-open" : "nav-menu"}
             src={ Menu }
             alt="Menu Icon"
         />

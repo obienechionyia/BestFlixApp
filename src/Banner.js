@@ -2,11 +2,20 @@ import React, { useState, useEffect } from "react";
 import axios from "./axios";
 import requests from "./requests";
 import "./Banner.css";
+import { useGlobalContext } from "./context";
 
 const baseUrl = "https://image.tmdb.org/t/p/original";
 
 function Banner() {
+  const {userList, setUserList} = useGlobalContext();
   const [movie, setMovie] = useState([]);
+  const addToList = () => {
+    if (!userList.includes(movie.name || movie.original_title)) {
+    setUserList([
+      ...userList,
+      movie?.name || movie.original_title,
+    ]);}
+  };
   const handleClick = (movie) => {
     const movieName = movie?.name || movie.original_title;
     window.open(`https://www.youtube.com/results?search_query=${movieName}+trailer`, "_blank");
@@ -39,7 +48,7 @@ function Banner() {
         <h1 className="banner-title">{movie?.name || movie.original_title}</h1>
         <div className="banner-buttons">
           <button className="banner-button" onClick={() => handleClick(movie)}>Trailer</button>
-          <button className="banner-button">Watch Later</button>
+          <button className="banner-button" onClick={addToList}>Watch Later</button>
         </div>
       </div>
       <div className="banner-fadeBottom" />

@@ -25,6 +25,12 @@
   right: 20px;
   top: 10px;
   cursor: pointer;
+  transition: all 0.3s;
+}
+
+.nav-open {
+  transform: rotate(90deg);
+  transition: all 0.3s;
 }
 
 .nav-black {

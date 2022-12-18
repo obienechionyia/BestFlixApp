@@ -23,6 +23,7 @@
   color: red;
   cursor: pointer;
   position: fixed;
+  margin-left: -15px;
 }
 
 .delete-btn:hover {
@@ -30,7 +31,7 @@
 }
 
 .clear-btn {
-  margin-top: 20px;
+  margin-top: 40px;
   cursor: pointer;
   background-color: transparent;
   color: white;
@@ -80,7 +81,8 @@
   color: white;
   list-style-type: none;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 32px;
+  cursor: pointer;
 }
 
 .movie-list {

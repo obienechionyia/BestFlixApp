@@ -4,8 +4,19 @@ import { useGlobalContext } from "./context";
 import "./Sidebar.css";
 
 const Sidebar = () => {
-  const { isSidebarOpen, closeSidebar, userList, setUserList } =
-    useGlobalContext();
+  const {
+    isSidebarOpen,
+    closeSidebar,
+    userList,
+    setUserList,
+    openModal,
+    setCurrentSelection,
+  } = useGlobalContext();
+  const watchLaterClick = (movie) => {
+    setCurrentSelection(movie);
+    closeSidebar();
+    openModal();
+  };
   const removeItem = (item) => {
     setUserList(userList.filter((movie) => movie != item));
   };
@@ -23,16 +34,23 @@ const Sidebar = () => {
         <h1 className="sidebar-text">Your Watch List</h1>
         <div className="movie-list">
           {userList.map((movie) => {
+            const { name, original_title } = movie;
             return (
-              <h3 id={movie} className="watch-later">
-                {movie}
+              <div className="watch-later-container">
+                <h3
+                  id={original_title}
+                  onClick={() => watchLaterClick(movie)}
+                  className="watch-later"
+                >
+                  {name || original_title}
+                </h3>
                 <button
                   className="delete-btn"
                   onClick={() => removeItem(movie)}
                 >
                   <FaTimes />
                 </button>
-              </h3>
+              </div>
             );
           })}
           <button className="clear-btn" onClick={clearList}>

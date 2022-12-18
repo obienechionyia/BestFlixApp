@@ -14,10 +14,10 @@ const Modal = () => {
   const { isModalOpen, closeModal, currentSelection, setUserList, userList } =
     useGlobalContext();
   const addToList = () => {
-    if (!userList.includes(currentSelection.name || currentSelection.original_title)) {
+    if (!userList.includes(currentSelection)) {
     setUserList([
       ...userList,
-      currentSelection?.name || currentSelection.original_title,
+      currentSelection
     ]);}
   };
 
@@ -47,7 +47,7 @@ const Modal = () => {
           Watch Trailer
         </button>
         <button className="trailer-btn" onClick={addToList}>
-          {userList.includes(currentSelection.name || currentSelection.original_title) ? "Watch Later ✅" : "Watch Later"}
+          {userList.includes(currentSelection) ? "Watch Later ✅" : "Watch Later"}
         </button>
       </div>
     </div>

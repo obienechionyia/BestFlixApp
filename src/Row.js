@@ -36,7 +36,7 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
               onClick={() => handleClick(movie)}
               className={isLargeRow ? "row-poster" : "row-backdrop"}
               src={`${baseUrl}${
-                isLargeRow ? movie.poster_path : movie.backdrop_path
+                movie.backdrop_path || movie.poster_path
               }`}
               alt={movie.name}
               key={movie.id}

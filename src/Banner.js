@@ -10,10 +10,10 @@ function Banner() {
   const {userList, setUserList} = useGlobalContext();
   const [movie, setMovie] = useState([]);
   const addToList = () => {
-    if (!userList.includes(movie.name || movie.original_title)) {
+    if (!userList.includes(movie)) {
     setUserList([
       ...userList,
-      movie?.name || movie.original_title,
+      movie
     ]);}
   };
   const handleClick = (movie) => {
@@ -32,7 +32,6 @@ function Banner() {
       return request;
     };
     fetchData();
-    console.log(movie);
   }, []);
   return (
     <header
@@ -48,7 +47,7 @@ function Banner() {
         <h1 className="banner-title">{movie?.name || movie.original_title}</h1>
         <div className="banner-buttons">
           <button className="banner-button" onClick={() => handleClick(movie)}>Trailer</button>
-          <button className="banner-button" onClick={addToList}>Watch Later</button>
+          <button className="banner-button" onClick={addToList}>{userList.includes(movie) ? "Watch Later ✅" : "Watch Later"}</button>
         </div>
       </div>
       <div className="banner-fadeBottom" />

@@ -19,9 +19,11 @@ const Sidebar = () => {
   };
   const removeItem = (item) => {
     setUserList(userList.filter((movie) => movie != item));
+    window.localStorage.removeItem(item.id);
   };
   const clearList = () => {
     setUserList([]);
+    window.localStorage.clear();
   };
   return (
     <aside className={isSidebarOpen ? "sidebar show-sidebar" : "sidebar"}>

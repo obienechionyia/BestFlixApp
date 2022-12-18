@@ -19,6 +19,11 @@ const Modal = () => {
       ...userList,
       currentSelection
     ]);}
+    window.localStorage.setItem(`${currentSelection.id}`,JSON.stringify(currentSelection))
+  };
+  const removeItem = (item) => {
+    setUserList(userList.filter((movie) => movie !== item));
+    window.localStorage.removeItem(`${currentSelection.id}`)
   };
 
   return (
@@ -46,7 +51,7 @@ const Modal = () => {
         >
           Watch Trailer
         </button>
-        <button className="trailer-btn" onClick={addToList}>
+        <button className="trailer-btn" onClick={!userList.includes(currentSelection) ? addToList : () => removeItem(currentSelection)}>
           {userList.includes(currentSelection) ? "Watch Later ✅" : "Watch Later"}
         </button>
       </div>

@@ -14,6 +14,7 @@
   font-size: 3rem;
   font-weight: 800;
   padding-bottom: 0.3rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
 .banner-button {
@@ -49,7 +50,7 @@
 
 .overlay {
   height: 100%;
-  background-color: black;
+  background-color: #111;
   opacity: 0;
   display: 0;
 }

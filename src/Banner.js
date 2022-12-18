@@ -15,6 +15,11 @@ function Banner() {
       ...userList,
       movie
     ]);}
+    window.localStorage.setItem(`${movie.id}`,JSON.stringify(movie))
+  };
+  const removeItem = (item) => {
+    setUserList(userList.filter((movie) => movie !== item));
+    window.localStorage.removeItem(`${movie.id}`)
   };
   const handleClick = (movie) => {
     const movieName = movie?.name || movie.original_title;
@@ -47,7 +52,7 @@ function Banner() {
         <h1 className="banner-title">{movie?.name || movie.original_title}</h1>
         <div className="banner-buttons">
           <button className="banner-button" onClick={() => handleClick(movie)}>Trailer</button>
-          <button className="banner-button" onClick={addToList}>{userList.includes(movie) ? "Watch Later ✅" : "Watch Later"}</button>
+          <button className="banner-button" onClick={!userList.includes(movie) ? addToList : () => removeItem(movie)}>{userList.includes(movie) ? "Watch Later ✅" : "Watch Later"}</button>
         </div>
       </div>
       <div className="banner-fadeBottom" />

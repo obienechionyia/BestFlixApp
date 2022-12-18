@@ -46,3 +46,8 @@
   transition-timing-function: ease-in;
   transition: all 0.5s;
 }
+
+.nav-title {
+  color: white;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}

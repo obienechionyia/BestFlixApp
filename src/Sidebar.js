@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaTimes } from "react-icons/fa";
 import { useGlobalContext } from "./context";
 import "./Sidebar.css";
@@ -14,7 +14,6 @@ const Sidebar = () => {
   } = useGlobalContext();
   const watchLaterClick = (movie) => {
     setCurrentSelection(movie);
-    closeSidebar();
     openModal();
   };
   const removeItem = (item) => {
@@ -25,6 +24,19 @@ const Sidebar = () => {
     setUserList([]);
     window.localStorage.clear();
   };
+  const localList = [];
+  const setFromLocal = () => {
+    for (let i = 0; i < localStorage.length; i++) {
+        const item = JSON.parse(localStorage.getItem(localStorage.key(i)));
+        if (!localList.includes(item)) {
+          localList.push(item);
+        }
+    };
+    console.log(localList);
+    setUserList(localList);
+  };
+  window.addEventListener('load', setFromLocal);
+  
   return (
     <aside className={isSidebarOpen ? "sidebar show-sidebar" : "sidebar"}>
       <div className="sidebar-header">

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 
 const AppContext = React.createContext();
 
@@ -14,19 +14,6 @@ const AppProvider = ({ children }) => {
     const closeSidebar = () => {
         setIsSidebarOpen(false);
     };
-
-    const localList = [];
-
-    // const setFromLocal = () => {
-    //     for (let i = 0; i < localStorage.length; i++) {
-    //         const item = JSON.parse(localStorage.getItem(localStorage.key(i)));
-    //         if (!localList.includes(item)) {
-    //             localList.push(item);
-    //         };
-    //     };
-    //     console.log(localList);
-    //     setUserList(localList);
-    // };
 
     const openModal = () => {
         setIsModalOpen(true);
@@ -46,7 +33,6 @@ const AppProvider = ({ children }) => {
             isSidebarOpen,
             openSidebar,
             closeSidebar,
-            // setFromLocal,
         }}
         >
             {children}

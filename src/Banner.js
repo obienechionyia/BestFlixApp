@@ -7,7 +7,7 @@ import { useGlobalContext } from "./context";
 const baseUrl = "https://image.tmdb.org/t/p/original";
 
 function Banner() {
-  const {userList, setUserList} = useGlobalContext();
+  const {userList, setUserList, openModal, setCurrentSelection} = useGlobalContext();
   const [movie, setMovie] = useState([]);
   const addToList = () => {
     if (!userList.includes(movie)) {
@@ -17,6 +17,10 @@ function Banner() {
     ]);}
     window.localStorage.setItem(`${movie.id}`,JSON.stringify(movie))
   };
+  const bannerSelect = async () => {
+    await setCurrentSelection(movie);
+    await openModal();
+  }
   const removeItem = (item) => {
     setUserList(userList.filter((movie) => movie !== item));
     window.localStorage.removeItem(`${movie.id}`)
@@ -49,7 +53,7 @@ function Banner() {
       }}
     >
       <div className="banner-content">
-        <h1 className="banner-title">{movie?.name || movie.original_title}</h1>
+        <h1 onClick={bannerSelect} className="banner-title">{movie?.name || movie.original_title}</h1>
         <div className="banner-buttons">
           <button className="banner-button" onClick={() => handleClick(movie)}>Trailer</button>
           <button className="banner-button" onClick={!userList.includes(movie) ? addToList : () => removeItem(movie)}>{userList.includes(movie) ? "Watch Later ✅" : "Watch Later"}</button>

@@ -27,16 +27,16 @@ const Sidebar = () => {
   const localList = [];
   const setFromLocal = () => {
     for (let i = 0; i < localStorage.length; i++) {
-        const item = JSON.parse(localStorage.getItem(localStorage.key(i)));
-        if (!localList.includes(item)) {
-          localList.push(item);
-        }
-    };
+      const item = JSON.parse(localStorage.getItem(localStorage.key(i)));
+      if (!localList.includes(item)) {
+        localList.push(item);
+      }
+    }
     console.log(localList);
     setUserList(localList);
   };
-  window.addEventListener('load', setFromLocal);
-  
+  window.addEventListener("load", setFromLocal);
+
   return (
     <aside className={isSidebarOpen ? "sidebar show-sidebar" : "sidebar"}>
       <div className="sidebar-header">

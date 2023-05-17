@@ -48,6 +48,8 @@
 
 .trailer-btn {
   cursor: pointer;
+  padding: 1rem;
+  padding-bottom: 2rem;
   background-color: transparent;
   color: white;
   border: 2px solid;

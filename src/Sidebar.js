@@ -39,11 +39,7 @@ const Sidebar = () => {
 
   return (
     <aside className={isSidebarOpen ? "sidebar show-sidebar" : "sidebar"}>
-      <div className="sidebar-header">
-        <button className="close-btn" onClick={closeSidebar}>
-          <FaTimes />
-        </button>
-      </div>
+      <div className="sidebar-header"></div>
       <div className="sidebar-container">
         <h1 className="sidebar-text">Your Watch List</h1>
         <div className="movie-list">
@@ -69,6 +65,9 @@ const Sidebar = () => {
           })}
           <button className="clear-btn" onClick={clearList}>
             {userList.length > 0 ? "Clear List" : "No Movies"}
+          </button>
+          <button className="clear-btn exit" onClick={closeSidebar}>
+            Exit
           </button>
         </div>
       </div>

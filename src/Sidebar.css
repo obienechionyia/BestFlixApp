@@ -18,16 +18,21 @@
 
 .watch-later-container {
   display: flex;
+  align-items: center;
   justify-content: center;
   /* flex-direction: column; */
 }
 
 .delete-btn {
   font-size: 1.2rem;
+  padding: 0;
+  border: none;
   background: transparent;
   border-color: transparent;
   color: red;
   cursor: pointer;
+  margin-left: 5px;
+  margin-top: 5px;
 }
 
 .delete-btn:hover {
@@ -36,6 +41,7 @@
 
 .clear-btn {
   margin-top: 40px;
+  margin-left: 10px;
   cursor: pointer;
   background-color: transparent;
   color: white;
@@ -47,6 +53,11 @@
   font-size: large;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   text-transform: uppercase;
+}
+
+.exit {
+  border-color: red;
+  margin-top: 10px;
 }
 
 .clear-btn:hover {
@@ -79,6 +90,7 @@
 
 .sidebar-text {
   color: white;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 2.5rem;
 }
 

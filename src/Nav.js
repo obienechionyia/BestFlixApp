@@ -18,9 +18,15 @@ function Nav() {
     });
   }, []);
 
+  const refresh = () => {
+    window.location.reload();
+  };
+
   return (
     <div className={show ? "nav-black" : "nav"}>
-      <h1 className="nav-title">BestFlix</h1>
+      <h1 className="nav-title" onClick={refresh}>
+        BestFlix
+      </h1>
       {/* <img className="nav-logo" src={Logo} alt="Movie App Logo" /> */}
       {/* <img
         onClick={isSidebarOpen ? closeSidebar : openSidebar}

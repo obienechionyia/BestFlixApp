@@ -18,6 +18,7 @@
 }
 .modal-container {
   background: rgb(49, 49, 49);
+  max-width: 60%;
   border-radius: 20px;
   display: flex;
   flex-direction: column;

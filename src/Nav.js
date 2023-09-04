@@ -22,12 +22,18 @@ function Nav() {
     <div className={show ? "nav-black" : "nav"}>
       <h1 className="nav-title">BestFlix</h1>
       {/* <img className="nav-logo" src={Logo} alt="Movie App Logo" /> */}
-      <img
+      {/* <img
         onClick={isSidebarOpen ? closeSidebar : openSidebar}
         className={isSidebarOpen ? "nav-menu nav-open" : "nav-menu"}
         src={Logo}
         alt="Menu Icon"
-      />
+      /> */}
+      <button
+        onClick={isSidebarOpen ? closeSidebar : openSidebar}
+        className={isSidebarOpen ? "nav-menu nav-open" : "nav-menu"}
+      >
+        Watch Later
+      </button>
     </div>
   );
 }

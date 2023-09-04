@@ -23,13 +23,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 40px;
 }
 .close-modal-btn {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 2rem;
+  margin-left: 99%;
+  padding: 0;
+  font-size: 1.5rem;
   background: transparent;
   border-color: transparent;
   color: red;
@@ -48,7 +47,7 @@
 .trailer-btn {
   cursor: pointer;
   padding: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
   background-color: transparent;
   color: white;
   border: 2px solid;
@@ -58,6 +57,10 @@
   font-size: large;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   text-transform: uppercase;
+}
+
+.watch-later-btn {
+  margin-bottom: 2.5rem;
 }
 
 .trailer-btn:hover {
@@ -71,5 +74,5 @@
 .modal-title {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   text-transform: uppercase;
-  margin: 1rem;
+  margin: 0;
 }

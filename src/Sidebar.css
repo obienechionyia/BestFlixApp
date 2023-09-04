@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1rem;
 }
 .close-btn {
   font-size: 1.75rem;
@@ -16,14 +16,18 @@
   color: rgb(153, 7, 7);
 }
 
+.watch-later-container {
+  display: flex;
+  justify-content: center;
+  /* flex-direction: column; */
+}
+
 .delete-btn {
   font-size: 1.2rem;
   background: transparent;
   border-color: transparent;
   color: red;
   cursor: pointer;
-  position: fixed;
-  margin-left: -15px;
 }
 
 .delete-btn:hover {
@@ -81,8 +85,8 @@
 .watch-later {
   color: white;
   list-style-type: none;
-  align-items: center;
-  margin-top: 32px;
+  /* align-items: center; */
+  /* margin-top: 32px; */
   cursor: pointer;
 }
 

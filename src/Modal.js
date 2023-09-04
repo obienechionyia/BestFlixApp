@@ -30,9 +30,6 @@ const Modal = () => {
   return (
     <div className={isModalOpen ? "modal-overlay show-modal" : "modal-overlay"}>
       <div className="modal-container">
-        <button className="close-modal-btn" onClick={closeModal}>
-          <FaTimes />
-        </button>
         <h2 className="modal-text modal-title">
           {currentSelection?.name || currentSelection.original_title}
         </h2>
@@ -61,8 +58,11 @@ const Modal = () => {
           }
         >
           {userList.includes(currentSelection)
-            ? "Watch Later ✅"
+            ? "Remove From List"
             : "Watch Later"}
+        </button>
+        <button className="trailer-btn close-modal-btn" onClick={closeModal}>
+          exit
         </button>
       </div>
     </div>

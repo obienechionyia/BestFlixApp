@@ -68,7 +68,7 @@ const Sidebar = () => {
             );
           })}
           <button className="clear-btn" onClick={clearList}>
-            {userList.length > 0 ? "Clear List" : "List Empty"}
+            {userList.length > 0 ? "Clear List" : "No Movies"}
           </button>
         </div>
       </div>

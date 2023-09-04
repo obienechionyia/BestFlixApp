@@ -18,26 +18,14 @@
 }
 .modal-container {
   background: rgb(49, 49, 49);
-  max-width: 60%;
+  max-width: 80%;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px;
-}
-.close-modal-btn {
-  margin-left: 99%;
-  padding: 0;
-  font-size: 1.5rem;
-  background: transparent;
-  border-color: transparent;
-  color: red;
-  cursor: pointer;
-}
-
-.close-modal-btn:hover {
-  color: rgb(184, 0, 0);
+  text-align: center;
+  padding: 20px;
 }
 
 .modal-poster {
@@ -53,19 +41,23 @@
   color: white;
   border: 2px solid;
   border-radius: 5px;
-  height: 3rem;
+  height: 2rem;
   width: 10rem;
-  font-size: large;
+  font-size: medium;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   text-transform: uppercase;
 }
 
 .watch-later-btn {
-  margin-bottom: 2.5rem;
+  border-color: green;
 }
 
 .trailer-btn:hover {
   background-color: rgb(29, 29, 29);
+}
+
+.close-modal-btn {
+  border-color: red;
 }
 
 .modal-text {
@@ -75,5 +67,5 @@
 .modal-title {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   text-transform: uppercase;
-  margin: 0;
+  margin-bottom: 0.5rem;
 }
